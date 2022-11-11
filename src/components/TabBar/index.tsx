@@ -1,48 +1,68 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, SettingsScreen} from '../../../App';
 import Home from '../home';
 import styles from './style';
 import Profile from '../Profile';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome, faUser } from '@fortawesome/free-solid-svg-icons';
-import { faDropbox } from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faHome, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faDropbox} from '@fortawesome/free-brands-svg-icons';
 import Detail from '../Detail';
-const Tab = createBottomTabNavigator();
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const MyTabs = () => {
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const HomeStack = createStackNavigator();
+
+const  HomeStackScreen = () => {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: 'blue',
-      }}>
-      <Tab.Screen
-        name="My Profile"
-        component={Profile}
-        options={{
-          tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faUser} />,
-        }}
-      />
-      <Tab.Screen
+    <HomeStack.Navigator>
+      <HomeStack.Screen
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faHome} />,
+          headerShown: false, // change this to `false`
         }}
       />
-      <Tab.Screen
-        name="Detail"
-        component={Detail}
-        options={{
-          tabBarIcon: ({focused, color}) => (
-            <FontAwesomeIcon
-              icon={faDropbox}
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
+      <HomeStack.Screen name="Detail" component={Detail} />
+    </HomeStack.Navigator>
+  );
+}
+const MyTabs = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: 'blue',
+        }}>
+        <Tab.Screen
+          name="My Profile"
+          component={Profile}
+          options={{
+            tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faUser} />,
+          }}
+        />
+        <Tab.Screen
+          name="Home"
+          component={HomeStackScreen}
+          options={{
+            tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faHome} />,
+          }}
+        />
+        {/* <Tab.Screen
+          name="Detail"
+          component={Detail}
+          options={{
+            tabBarIcon: ({focused, color}) => (
+              <FontAwesomeIcon icon={faDropbox} />
+            ),
+          }}
+        /> */}
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 

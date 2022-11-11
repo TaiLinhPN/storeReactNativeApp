@@ -1,13 +1,27 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, ImageBackground, ScrollView, Text, View} from 'react-native';
+import {
+  Button,
+  Image,
+  ImageBackground,
+  ScrollView,
+  Text,
+  View,
+} from 'react-native';
 import ProductCol from './ProductCol';
 import Product from './ProductCol';
 import ProductRow from './ProductRow';
 import styles from './style';
 const Home = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.app}>
       <View style={styles.banner}>
+        <Button
+          title="Go to Details"
+          onPress={() => navigation.navigate('Detail' as never)}
+        />
         <Text style={styles.TextHeader}>Diabetes Care</Text>
         <ImageBackground
           source={{
