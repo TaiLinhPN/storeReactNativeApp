@@ -1,23 +1,23 @@
-import {createStackNavigator} from '@react-navigation/stack';
 import react from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
 import Detail from '../Detail';
 import Home from '../home';
 
 const HomeStack = createStackNavigator();
 
-function HomeStackScreen() {
+const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
-        name="Home"
+        name="HomeStack"
         component={Home}
         options={{
-          headerShown: false, // change this to `false`
+          headerShown: false,
         }}
       />
       <HomeStack.Screen name="Detail" component={Detail} />
     </HomeStack.Navigator>
   );
-}
+};
 
-export default HomeStackScreen;
+export {HomeStackScreen};
