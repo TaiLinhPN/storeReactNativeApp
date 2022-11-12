@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/overpass-Italic.ttf",
+      "sha1": "c24d68be02e7337ab604978fb32c28ef1b25aca2"
+    },
+    {
+      "path": "assets/fonts/overpass_bold.ttf",
+      "sha1": "e420e1174dd8cda693ffd247d31ae6f3bd1681b7"
+    },
+    {
+      "path": "assets/fonts/overpass_light.ttf",
+      "sha1": "52468851c02639791989b60d4b7f0fea21215081"
+    },
+    {
+      "path": "assets/fonts/overpass_medium.ttf",
+      "sha1": "fecb003e384b102093e529d6e0de15e2c1d314ea"
+    },
+    {
+      "path": "assets/fonts/overpass_normal.ttf",
+      "sha1": "0dab6623885d01676c91a370c6d450b6cc9dce9b"
+    }
+  ]
+}

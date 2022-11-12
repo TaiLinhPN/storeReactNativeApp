@@ -8,11 +8,10 @@ import {
   Text,
   View,
 } from 'react-native';
-import ProductCol from './ProductCol';
-import Product from './ProductCol';
-import ProductRow from './ProductRow';
-import styles from './style';
-const Home = () => {
+import ProductCol from '../components/home/ProductCol';
+import ProductRow from '../components/home/ProductRow';
+import styles from '../components/home/style';
+const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
@@ -37,4 +36,6 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeScreen;
+
+

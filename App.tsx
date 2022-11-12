@@ -1,5 +1,5 @@
 import React from 'react';
-import MyTabs from './src/components/TabBar';
+import MyTabs from './src/navigation/TabBar';
 const App = () => {
   return (
     <>

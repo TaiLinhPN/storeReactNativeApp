@@ -1,12 +1,12 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import styles from './style';
-import Profile from '../Profile';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faHome, faUser} from '@fortawesome/free-solid-svg-icons';
 import {NavigationContainer} from '@react-navigation/native';
 import {HomeStackScreen} from '../Stack';
-import Detail from '../Detail';
+import DetailScreen from '../../screens/DetailScreen';
+import ProfileScreen from '../../screens/ProfileScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -20,14 +20,14 @@ const MyTabs = () => {
         }}>
         <Tab.Screen
           name="Detail"
-          component={Detail}
+          component={DetailScreen}
           options={{
             tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faHome} />,
           }}
         />
         <Tab.Screen
           name="My Profile"
-          component={Profile}
+          component={ProfileScreen}
           options={{
             tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faUser} />,
           }}
