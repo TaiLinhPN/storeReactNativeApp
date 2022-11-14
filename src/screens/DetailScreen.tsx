@@ -79,11 +79,11 @@ const DetailScreen = () => {
         </Text>
 
         <Rating />
-        <View style={globalStyles.row}>
+        <View style={[globalStyles.row, globalStyles.center]}>
           <CustomButton
             textStyle={styles.addToCartBtnText}
             pressStyle={styles.addToCartBtnPress}
-            title="Add to cart"
+            title="ADD TO CART"
           />
         </View>
       </View>

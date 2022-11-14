@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { textListColor } from '../../theme/colors';
 
 const styles = StyleSheet.create({
   app: {
@@ -17,11 +18,14 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    
+    borderBottomWidth: 1,
+    borderColor: 'rgba(0, 0, 0,0.1)'
   },
   optionText: {
     marginLeft: 10,
-    color: "blue"
+    color: textListColor,
+    paddingTop: 16,
+    paddingBottom: 16
   },
   imgUser: {
     flex: 1,

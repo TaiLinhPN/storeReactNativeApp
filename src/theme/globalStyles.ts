@@ -1,30 +1,15 @@
 import {StyleSheet} from 'react-native';
 import { Dimensions } from 'react-native';
+import { whiteColor } from './colors';
 
 export const windowWidth = Dimensions.get('window').width;
 const globalStyles = StyleSheet.create({
-  //  app: {
-  //   margin: 20,
-  //   height: '100%',
-  // },
-  // row: {
-  //   display: 'flex',
-  //   flexDirection: 'row',
-  //   alignItems: 'center',
-  // },
-  // col: {
-  //   flexDirection: 'column',
-  // },
-  // spaceBetween: {
-  //   justifyContent: 'space-between',
-  // },
-  // flexStart: {
-  //   justifyContent: 'flex-start',
-  // },
+  
 
    app: {
-    margin: 20,
+    padding: 20,
     height: '100%',
+    backgroundColor: whiteColor
   },
   row: {
     display: 'flex',
@@ -39,6 +24,9 @@ const globalStyles = StyleSheet.create({
   },
   flexStart: {
     justifyContent: 'flex-start',
+  },
+  center: {
+    justifyContent: 'center',
   },
   
 });

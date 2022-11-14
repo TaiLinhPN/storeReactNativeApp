@@ -65,9 +65,25 @@ const styles = StyleSheet.create({
   },
   addToCartBtnPress: {
     backgroundColor: primaryBtnColor,
+    borderRadius: 56,
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 120,
+    paddingRight: 120,
+    shadowColor: primaryBtnColor,
+    shadowOffset: {
+      width: 1,
+      height: 7,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 5,
+
+    elevation: 8,
   },
   addToCartBtnText: {
     color: whiteColor,
+    fontSize: 16,
+    fontWeight: '700',
   },
   addToCartIcon: {
     color: primaryBtnColor,

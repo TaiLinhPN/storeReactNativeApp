@@ -1,11 +1,13 @@
-import {faDropbox} from '@fortawesome/free-brands-svg-icons';
+import {faDropbox, faSquareDribbble, faSquarespace} from '@fortawesome/free-brands-svg-icons';
+import { faAngleRight, faSquareCaretDown } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import styles from '../components/Profile/style';
+import globalStyles from '../theme/globalStyles';
 const ProfileScreen = () => {
   return (
-    <View style={styles.app}>
+    <View style={globalStyles.app}>
       <View style={styles.user}>
         <View style={styles.imgUserContainer}>
           <Image
@@ -20,29 +22,15 @@ const ProfileScreen = () => {
         </View>
       </View>
       <View style={styles.listOption}>
-        <View style={styles.option}>
-          <FontAwesomeIcon icon={faDropbox} />
-          <Text style={styles.optionText}>Private Account</Text>
-        </View>
-
-        <View style={styles.option}>
-          <FontAwesomeIcon icon={faDropbox} />
-          <Text style={styles.optionText}>Private Account</Text>
-        </View>
-
-        <View style={styles.option}>
-          <FontAwesomeIcon icon={faDropbox} />
-          <Text style={styles.optionText}>Private Account</Text>
-        </View>
-
-        <View style={styles.option}>
-          <FontAwesomeIcon icon={faDropbox} />
-          <Text style={styles.optionText}>Private Account</Text>
-        </View>
-
-        <View style={styles.option}>
-          <FontAwesomeIcon icon={faDropbox} />
-          <Text style={styles.optionText}>Private Account</Text>
+        <View
+          style={[globalStyles.row, styles.option, globalStyles.spaceBetween]}>
+          <View style={globalStyles.row}>
+            <FontAwesomeIcon
+              icon={faSquarespace}
+            />
+            <Text style={styles.optionText}>Private Account</Text>
+          </View>
+          <FontAwesomeIcon icon={faAngleRight} />
         </View>
       </View>
     </View>

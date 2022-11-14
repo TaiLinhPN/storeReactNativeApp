@@ -18,13 +18,13 @@ const MyTabs = () => {
           headerShown: false,
           tabBarActiveTintColor: 'blue',
         }}>
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Detail"
           component={DetailScreen}
           options={{
             tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faHome} />,
           }}
-        />
+        /> */}
         <Tab.Screen
           name="My Profile"
           component={ProfileScreen}

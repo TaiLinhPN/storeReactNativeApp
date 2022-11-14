@@ -11,11 +11,13 @@ import {
 import ProductCol from '../components/home/ProductCol';
 import ProductRow from '../components/home/ProductRow';
 import styles from '../components/home/style';
+import globalStyles from '../theme/globalStyles';
+
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.app}>
+    <View style={globalStyles.app}>
       <View style={styles.banner}>
         <Button
           title="Go to Details"

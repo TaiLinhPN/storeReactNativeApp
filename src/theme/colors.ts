@@ -4,4 +4,5 @@ const whiteColor = '#fff'
 const orangeColor = '#FFA41B'
 const orangeColorShadow = 'rgba(255, 164, 27, 0.05)'
 const primaryBtnColor = 'rgba(0, 106, 255, 1)'
-export  { starColor, blackColor, whiteColor, orangeColor,orangeColorShadow, primaryBtnColor }
+const textListColor = 'rgba(9, 28, 63, 0.75)'
+export  { starColor, blackColor, whiteColor, orangeColor,orangeColorShadow, primaryBtnColor,textListColor }
