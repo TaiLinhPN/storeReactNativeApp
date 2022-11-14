@@ -26,17 +26,17 @@ const MyTabs = () => {
           }}
         /> */}
         <Tab.Screen
-          name="My Profile"
-          component={ProfileScreen}
-          options={{
-            tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faUser} />,
-          }}
-        />
-        <Tab.Screen
           name="Home"
           component={HomeStackScreen}
           options={{
             tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faHome} />,
+          }}
+        />
+        <Tab.Screen
+          name="My Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({focused, color}) => <FontAwesomeIcon icon={faUser} />,
           }}
         />
       </Tab.Navigator>

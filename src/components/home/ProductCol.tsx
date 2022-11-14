@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {Button, Image, ScrollView, Text, View} from 'react-native';
+import {Button, Image, Pressable, ScrollView, Text, View} from 'react-native';
 import styles from './style';
 
 interface Product {
@@ -18,8 +18,7 @@ const initializeProduct: Product = {
   rating: 0,
 };
 const ProductCol = () => {
-  
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   const [products, setProducts] = useState<Product[]>([initializeProduct]);
   useEffect(() => {
@@ -31,25 +30,22 @@ const ProductCol = () => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        {products.map((product) => {
+        {products.map(product => {
           return (
-            <View style={styles.item} key={product.id}>
-              <Image
-                source={{
-                  uri: `${product.image}`,
-                }}
-                style={styles.imgBanner}></Image>
-              <Text>{product.name}</Text>
-              <Text>{product.price}</Text>
-              <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Detail' as never)}
-              />
-            </View>
+            <Pressable
+              key={product.id}
+              style={styles.item}
+              onPress={() => navigation.navigate('Detail' as never)}>
+                <Image
+                  source={{
+                    uri: `${product.image}`,
+                  }}
+                  style={styles.imgBanner}></Image>
+                <Text>{product.name}</Text>
+                <Text>{product.price}</Text>
+            </Pressable>
           );
         })}
-
-        
       </View>
     </ScrollView>
   );

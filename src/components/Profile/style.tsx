@@ -1,16 +1,18 @@
 import {StyleSheet} from 'react-native';
-import { textListColor } from '../../theme/colors';
+import Color from '../../theme/colors';
 
 const styles = StyleSheet.create({
-  app: {
-    marginTop: 30,
-    margin: 20,
-  },
   user: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
+  },
+  headText: {
+    fontWeight: '700',
+    fontSize: 16,
+    marginBottom: 26,
+    color: Color.black,
   },
 
   listOption: {},
@@ -19,13 +21,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: 'rgba(0, 0, 0,0.1)'
+    borderColor: 'rgba(0, 0, 0,0.1)',
   },
   optionText: {
     marginLeft: 10,
-    color: textListColor,
+    color: Color.textList,
     paddingTop: 16,
-    paddingBottom: 16
+    paddingBottom: 16,
   },
   imgUser: {
     flex: 1,
@@ -49,7 +51,9 @@ const styles = StyleSheet.create({
   },
   welcomeText: {},
   userName: {
-    fontWeight: 'bold',
+    fontWeight: '700',
+    fontSize: 20,
+    color: Color.black,
   },
 });
 

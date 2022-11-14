@@ -1,8 +1,12 @@
-const starColor = 'rgba(255, 192, 0,1)'
-const blackColor = '#000'
-const whiteColor = '#fff'
-const orangeColor = '#FFA41B'
-const orangeColorShadow = 'rgba(255, 164, 27, 0.05)'
-const primaryBtnColor = 'rgba(0, 106, 255, 1)'
-const textListColor = 'rgba(9, 28, 63, 0.75)'
-export  { starColor, blackColor, whiteColor, orangeColor,orangeColorShadow, primaryBtnColor,textListColor }
+const color = {
+  star: 'rgba(255, 192, 0,1)',
+  black: '#000',
+  white: '#fff',
+  orange: '#FFA41B',
+  orangeShadow: 'rgba(255, 164, 27, 0.05)',
+  primaryBtn: 'rgba(0, 106, 255, 1)',
+  textList: 'rgba(9, 28, 63, 0.75)',
+  detailIcon: 'rgba(65, 87, 255, 0.7)',
+};
+
+export default color;

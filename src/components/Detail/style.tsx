@@ -1,13 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
-import {
-  blackColor,
-  orangeColor,
-  orangeColorShadow,
-  primaryBtnColor,
-  starColor,
-  whiteColor,
-} from '../../theme/colors';
+import Color from '../../theme/colors';
 
 export const windowWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
@@ -32,18 +25,18 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 22,
     fontWeight: '700',
-    color: blackColor,
+    color: Color.black,
   },
   detailHeaderText: {
     fontSize: 16,
     fontWeight: '600',
     marginTop: 10,
     marginBottom: 16,
-    color: blackColor,
+    color: Color.black,
   },
   productPrice: {
     fontWeight: '700',
-    color: blackColor,
+    color: Color.black,
   },
   productSub: {
     marginTop: 4,
@@ -60,17 +53,17 @@ const styles = StyleSheet.create({
     marginBottom: 26,
   },
   addToCartBtn: {
-    color: primaryBtnColor,
+    color: Color.primaryBtn,
     paddingLeft: 10,
   },
   addToCartBtnPress: {
-    backgroundColor: primaryBtnColor,
+    backgroundColor: Color.primaryBtn,
     borderRadius: 56,
     paddingTop: 12,
     paddingBottom: 12,
     paddingLeft: 120,
     paddingRight: 120,
-    shadowColor: primaryBtnColor,
+    shadowColor: Color.primaryBtn,
     shadowOffset: {
       width: 1,
       height: 7,
@@ -81,29 +74,29 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   addToCartBtnText: {
-    color: whiteColor,
+    color: Color.white,
     fontSize: 16,
     fontWeight: '700',
   },
   addToCartIcon: {
-    color: primaryBtnColor,
+    color: Color.primaryBtn,
   },
   choicePackage: {
     borderWidth: 1,
-    borderColor: orangeColor,
+    borderColor: Color.orange,
     borderRadius: 6,
-    backgroundColor: orangeColorShadow,
+    backgroundColor: Color.orangeShadow,
     padding: 10,
     // width: '30%',
     marginRight: 20,
   },
   packagePrice: {
     fontWeight: '700',
-    color: orangeColor,
+    color: Color.orange,
     marginBottom: 6,
   },
   packageQuantity: {
-    color: orangeColor,
+    color: Color.orange,
     marginBottom: 6,
   },
   colRating: {
@@ -113,7 +106,7 @@ const styles = StyleSheet.create({
   RatingNumber: {
     fontSize: 33,
     fontWeight: '600',
-    color: blackColor,
+    color: Color.black,
   },
   voteChart: {
     height: 3,
@@ -131,7 +124,7 @@ const styles = StyleSheet.create({
   rating: {
     marginBottom: 18,
   },
-  voteStar: {color: starColor},
+  voteStar: {color: Color.star},
   CusName: {
     fontWeight: '600',
   },

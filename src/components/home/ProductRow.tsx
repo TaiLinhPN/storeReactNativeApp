@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {Image, ScrollView, Text, View} from 'react-native';
+import globalStyles from '../../theme/globalStyles';
 import styles from './style';
 const ProductRow = () => {
- interface Product {
-   id: number;
-   name: string;
-   image: string;
-   price: number;
-   rating: number;
- }
- const initializeProduct: Product = {
-   id: 1,
-   name: '',
-   image: 'https://picsum.photos/400?image=261',
-   price: 0,
-   rating: 0,
- };
+  interface Product {
+    id: number;
+    name: string;
+    image: string;
+    price: number;
+    rating: number;
+  }
+  const initializeProduct: Product = {
+    id: 1,
+    name: '',
+    image: 'https://picsum.photos/400?image=261',
+    price: 0,
+    rating: 0,
+  };
 
   const [products, setProducts] = useState<Product[]>([initializeProduct]);
   useEffect(() => {
@@ -24,21 +25,13 @@ const ProductRow = () => {
       .then(data => setProducts(data));
   }, []);
   return (
-    <ScrollView horizontal={true}>
-      <View style={styles.containerRow}>
-        <View style={styles.itemRow}>
-          <Image
-            source={{
-              uri: 'https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-fresh-literary-fruit-fresh-food-taobao-banner-image_173851.jpg',
-            }}
-            style={styles.imgItem}></Image>
-          <Text>Táo Trung quả</Text>
-          <Text>priec 200</Text>
-        </View>
+    <View style={globalStyles.row}>
+      <ScrollView horizontal={true}>
+        
 
-        {products.map((product) => {
+        {products.map(product => {
           return (
-            <View style={styles.itemRow} key={product.id}>
+            <View style={styles.featuredProducts} key={product.id}>
               <Image
                 source={{
                   uri: `${product.image}`,
@@ -49,8 +42,8 @@ const ProductRow = () => {
             </View>
           );
         })}
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 
