@@ -1,5 +1,13 @@
 import {StyleSheet} from 'react-native';
-import { Dimensions } from 'react-native';
+import {Dimensions} from 'react-native';
+import {
+  blackColor,
+  orangeColor,
+  orangeColorShadow,
+  primaryBtnColor,
+  starColor,
+  whiteColor,
+} from '../../theme/colors';
 
 export const windowWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
@@ -15,21 +23,27 @@ const styles = StyleSheet.create({
   col: {
     flexDirection: 'column',
   },
+  spaceBetween: {
+    justifyContent: 'space-between',
+  },
+  flexStart: {
+    justifyContent: 'flex-start',
+  },
   productName: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#000',
+    color: blackColor,
   },
   detailHeaderText: {
     fontSize: 16,
     fontWeight: '600',
     marginTop: 10,
     marginBottom: 16,
-    color: '#000',
+    color: blackColor,
   },
   productPrice: {
     fontWeight: '700',
-    color: '#000',
+    color: blackColor,
   },
   productSub: {
     marginTop: 4,
@@ -46,28 +60,34 @@ const styles = StyleSheet.create({
     marginBottom: 26,
   },
   addToCartBtn: {
-    color: 'rgba(0, 106, 255, 1)',
+    color: primaryBtnColor,
     paddingLeft: 10,
   },
+  addToCartBtnPress: {
+    backgroundColor: primaryBtnColor,
+  },
+  addToCartBtnText: {
+    color: whiteColor,
+  },
   addToCartIcon: {
-    color: 'rgba(0, 106, 255, 1)',
+    color: primaryBtnColor,
   },
   choicePackage: {
     borderWidth: 1,
-    borderColor: '#FFA41B',
+    borderColor: orangeColor,
     borderRadius: 6,
-    backgroundColor: 'rgba(255, 164, 27, 0.05)',
+    backgroundColor: orangeColorShadow,
     padding: 10,
     // width: '30%',
     marginRight: 20,
   },
   packagePrice: {
     fontWeight: '700',
-    color: '#FFA41B',
+    color: orangeColor,
     marginBottom: 6,
   },
   packageQuantity: {
-    color: '#FFA41B',
+    color: orangeColor,
     marginBottom: 6,
   },
   colRating: {
@@ -77,7 +97,7 @@ const styles = StyleSheet.create({
   RatingNumber: {
     fontSize: 33,
     fontWeight: '600',
-    color: '#000',
+    color: blackColor,
   },
   voteChart: {
     height: 3,
@@ -91,16 +111,11 @@ const styles = StyleSheet.create({
   separationLine: {
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
   },
-  spaceBetween: {
-    justifyContent: 'space-between',
-  },
-  flexStart: {
-    justifyContent: 'flex-start',
-  },
-  rating:{
+
+  rating: {
     marginBottom: 18,
   },
-  voteStar: {color: 'rgba(255, 192, 0, 1)'},
+  voteStar: {color: starColor},
   CusName: {
     fontWeight: '600',
   },

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
-import MyButton from '../Button';
+import MyButton from '../ButtonTest';
 import Input from '../Input';
 import styles from './style';
 

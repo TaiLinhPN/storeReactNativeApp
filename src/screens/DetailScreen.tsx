@@ -3,18 +3,19 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
 import {ImageBackground, Pressable, Text, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import CustomButton from '../components/core/CustomButton';
 import {CustomText} from '../components/core/StyledText';
 import Rating from '../components/Detail/Rating';
 import styles from '../components/Detail/style';
+import globalStyles from '../theme/globalStyles';
 
 const onPressAddToCar = () => {
-  console.log("go to cart");
-  
+  console.log('go to cart');
 };
 const DetailScreen = () => {
   return (
     <ScrollView>
-      <View style={styles.app}>
+      <View style={globalStyles.app}>
         <Text style={styles.productName}>Product name</Text>
         <Text style={styles.productSub}>Product subtitle</Text>
         <ImageBackground
@@ -23,7 +24,7 @@ const DetailScreen = () => {
           }}
           style={styles.imgBanner}></ImageBackground>
 
-        <View style={[styles.row, styles.spaceBetween]}>
+        <View style={[globalStyles.row, globalStyles.spaceBetween]}>
           <View style={styles.col}>
             <Text style={styles.productPrice}>$56</Text>
             <Text style={styles.productSub}>Etiam mollis</Text>
@@ -31,24 +32,26 @@ const DetailScreen = () => {
 
           <Pressable
             onPress={onPressAddToCar}
-            // style={[styles.row, styles.addToCartBtn]}
+            // style={[globalStyles.row, globalStyles.addToCartBtn]}
             style={({pressed}) => [
               {
                 // backgroundColor: pressed ? 'rgb(210, 230, 255)' :'white',
                 // color: pressed ? 'white' : 'rgba(0, 106, 255, 1)',
               },
               styles.addToCartBtn,
-              styles.row,
+              globalStyles.row,
             ]}>
             <FontAwesomeIcon icon={faSquarePlus} style={styles.addToCartIcon} />
-            <Text style={[styles.col, styles.addToCartBtn]}>Add to cart</Text>
+            <Text style={[globalStyles.col, styles.addToCartBtn]}>
+              Add to cart
+            </Text>
           </Pressable>
         </View>
         <View
           style={[styles.separationLine, {height: 1, width: '100%'}]}></View>
 
         <Text style={styles.detailHeaderText}>Package size</Text>
-        <View style={[styles.row, styles.flexStart]}>
+        <View style={[globalStyles.row, globalStyles.flexStart]}>
           <ScrollView horizontal={true}>
             <View style={styles.choicePackage}>
               <Text style={styles.packagePrice}>$106</Text>
@@ -76,6 +79,13 @@ const DetailScreen = () => {
         </Text>
 
         <Rating />
+        <View style={globalStyles.row}>
+          <CustomButton
+            textStyle={styles.addToCartBtnText}
+            pressStyle={styles.addToCartBtnPress}
+            title="Add to cart"
+          />
+        </View>
       </View>
     </ScrollView>
   );
