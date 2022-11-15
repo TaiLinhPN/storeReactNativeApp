@@ -1,19 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {Image, Pressable, ScrollView, Text, View} from 'react-native';
+import { ScrollView, View} from 'react-native';
 import globalStyles from '../../theme/globalStyles';
-import styles from './style';
-const ProductRow = () => {
-  const navigation = useNavigation();
+import FeaturedProduct from './FeaturedProduct';
+import {ProductProp} from './Product';
 
-  interface Product {
-    id: number;
-    name: string;
-    image: string;
-    price: number;
-    rating: number;
-  }
-  const initializeProduct: Product = {
+const ProductRow = () => {
+
+  const initializeProduct: ProductProp = {
     id: 0,
     name: '',
     image: 'https://picsum.photos/400?image=261',
@@ -21,7 +14,7 @@ const ProductRow = () => {
     rating: 0,
   };
 
-  const [products, setProducts] = useState<Product[]>([initializeProduct]);
+  const [products, setProducts] = useState<ProductProp[]>([initializeProduct]);
   useEffect(() => {
     fetch('https://61daee3c4593510017aff71b.mockapi.io/products')
       .then(response => response.json())
@@ -32,17 +25,11 @@ const ProductRow = () => {
       <ScrollView horizontal={true}>
         {products.map(product => {
           return (
-            <Pressable
-              onPress={() => navigation.navigate('Detail' as never)}
-              style={styles.featuredItem}
-              key={product.id}>
-              <Image
-                source={{
-                  uri: `${product.image}`,
-                }}
-                style={styles.featuredImg}></Image>
-              <Text style={styles.featuredName}>{product.name}</Text>
-            </Pressable>
+            <FeaturedProduct
+              key={product.id}
+              name={product.name}
+              image={product.image}
+            />
           );
         })}
       </ScrollView>

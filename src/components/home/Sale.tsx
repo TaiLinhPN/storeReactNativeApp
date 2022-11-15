@@ -3,8 +3,8 @@ import { StyleProp, Text, View, ViewStyle } from 'react-native';
 import styles from './style';
 
 interface SaleProp {
-  saleText: string;
-  color: '#FFC618' | '#FF5A5A';
+  saleText?: string;
+  color?: '#FFC618' | '#FF5A5A';
 }
 const Sale = (props: SaleProp) => {
   return (

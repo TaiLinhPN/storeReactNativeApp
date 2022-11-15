@@ -12,6 +12,7 @@ interface Product {
   image: string;
   price: number;
   rating: number;
+  sale?: {color: '#FFC618' | '#FF5A5A', text: string};
 }
 const initializeProduct: Product = {
   id: 1,
@@ -19,6 +20,7 @@ const initializeProduct: Product = {
   image: 'https://picsum.photos/400?image=261',
   price: 0,
   rating: 0,
+  // sale:{color: "", text: ""}
 };
 
 const ProductCol = () => {
@@ -38,7 +40,9 @@ const ProductCol = () => {
             name={product.name}
             price={product.price}
             image={product.image}
-            sale={<Sale color={'#FFC618'} saleText={'Sale off'} />}
+            rating={product.rating}
+            
+            sale={<Sale color={product.sale?.color} saleText={product.sale?.text} />}
           />
         );
       })}
