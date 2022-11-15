@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import globalStyles from '../../theme/globalStyles';
@@ -30,8 +30,6 @@ const ProductRow = () => {
   return (
     <View style={globalStyles.row}>
       <ScrollView horizontal={true}>
-        
-
         {products.map(product => {
           return (
             <Pressable

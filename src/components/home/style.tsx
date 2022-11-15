@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import color from '../../theme/colors';
+import {appWidth} from '../../theme/globalStyles';
 
 const styles = StyleSheet.create({
   banner: {
@@ -20,16 +21,16 @@ const styles = StyleSheet.create({
     color: color.primaryText,
   },
   container: {
-    flex: 1,
+    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
     flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
 
   //   featured products: {
   featuredItem: {
     marginRight: 10,
-    width: '25%',
+    width: appWidth / 3,
     height: 'auto',
     backgroundColor: '#F5F7FA',
     borderRadius: 10,
@@ -45,13 +46,15 @@ const styles = StyleSheet.create({
   },
 
   // All Products
+
   item: {
-    width: '50%',
+    width: appWidth * 0.48,
     height: 'auto',
     borderWidth: 1,
     borderColor: '#EBEBEB',
     borderRadius: 10,
     overflow: 'hidden',
+    marginBottom: appWidth * 0.04,
   },
   image: {
     height: 158,
@@ -89,17 +92,22 @@ const styles = StyleSheet.create({
 
   saleContainer: {
     position: 'absolute',
-    width: 'auto',
-    height: 'auto',
     borderTopWidth: 58,
     borderRightWidth: 58,
     borderTopColor: 'red',
     borderRightColor: 'transparent',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   saleText: {
     position: 'absolute',
     color: color.white,
-    top: -52,
+    fontSize: 11,
+    fontWeight: '700',
+    lineHeight: 11,
+    top: -38,
+    left: 0,
     transform: [{rotate: '-45deg'}],
   },
 });

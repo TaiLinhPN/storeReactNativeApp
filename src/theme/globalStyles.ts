@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import { Dimensions } from 'react-native';
 import color from './colors';
 
-export const windowWidth = Dimensions.get('window').width;
+export const appWidth = Dimensions.get('window').width - 40;
 const globalStyles = StyleSheet.create({
   
 

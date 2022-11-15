@@ -42,7 +42,18 @@ const ProfileScreen = () => {
       </View>
       <View style={styles.listOption}>
         {listOption.map((option, index) => {
-          return <Option key={index} icon={option.icon} name={option.name} />;
+          return (
+            <Option
+              key={index}
+              icon={option.icon}
+              name={option.name}
+              style={{borderTopWidth: index === 0 ? 0 : 1}}
+            />
+          );
+
+
+
+          
         })}
       </View>
     </View>

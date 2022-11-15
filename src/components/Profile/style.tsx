@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 1,
+    borderTopWidth: 1,
     borderColor: 'rgba(0, 0, 0,0.1)',
   },
   optionText: {
