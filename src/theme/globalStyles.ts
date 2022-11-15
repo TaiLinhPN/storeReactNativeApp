@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { Dimensions } from 'react-native';
-import { whiteColor } from './colors';
+import color from './colors';
 
 export const windowWidth = Dimensions.get('window').width;
 const globalStyles = StyleSheet.create({
@@ -9,7 +9,7 @@ const globalStyles = StyleSheet.create({
    app: {
     padding: 20,
     height: '100%',
-    backgroundColor: whiteColor
+    backgroundColor: color.white
   },
   row: {
     display: 'flex',

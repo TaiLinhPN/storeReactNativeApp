@@ -1,8 +1,11 @@
+import { useNavigation } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {Image, ScrollView, Text, View} from 'react-native';
+import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import globalStyles from '../../theme/globalStyles';
 import styles from './style';
 const ProductRow = () => {
+  const navigation = useNavigation();
+
   interface Product {
     id: number;
     name: string;
@@ -11,7 +14,7 @@ const ProductRow = () => {
     rating: number;
   }
   const initializeProduct: Product = {
-    id: 1,
+    id: 0,
     name: '',
     image: 'https://picsum.photos/400?image=261',
     price: 0,
@@ -31,15 +34,17 @@ const ProductRow = () => {
 
         {products.map(product => {
           return (
-            <View style={styles.featuredProducts} key={product.id}>
+            <Pressable
+              onPress={() => navigation.navigate('Detail' as never)}
+              style={styles.featuredItem}
+              key={product.id}>
               <Image
                 source={{
                   uri: `${product.image}`,
                 }}
-                style={styles.imgItem}></Image>
-              <Text>{product.name}</Text>
-              <Text>{product.price}</Text>
-            </View>
+                style={styles.featuredImg}></Image>
+              <Text style={styles.featuredName}>{product.name}</Text>
+            </Pressable>
           );
         })}
       </ScrollView>
