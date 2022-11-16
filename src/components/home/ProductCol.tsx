@@ -12,7 +12,7 @@ interface Product {
   image: string;
   price: number;
   rating: number;
-  sale?: {color: '#FFC618' | '#FF5A5A', text: string};
+  sale?: {color: '#FFC618' | '#FF5A5A'; text: string};
 }
 const initializeProduct: Product = {
   id: 1,
@@ -20,7 +20,7 @@ const initializeProduct: Product = {
   image: 'https://picsum.photos/400?image=261',
   price: 0,
   rating: 0,
-  // sale:{color: "", text: ""}
+  sale: {color: '#FFC618', text: '15% off'},
 };
 
 const ProductCol = () => {
@@ -34,6 +34,23 @@ const ProductCol = () => {
   return (
     <View style={[styles.container]}>
       {products.map((product, index) => {
+        if (product.sale?.color) {
+          return (
+            <Product
+              key={index}
+              name={product.name}
+              price={product.price}
+              image={product.image}
+              rating={product.rating}
+              sale={
+                <Sale
+                  color={product.sale?.color}
+                  saleText={product.sale?.text}
+                />
+              }
+            />
+          );
+        }
         return (
           <Product
             key={index}
@@ -41,8 +58,6 @@ const ProductCol = () => {
             price={product.price}
             image={product.image}
             rating={product.rating}
-            
-            sale={<Sale color={product.sale?.color} saleText={product.sale?.text} />}
           />
         );
       })}
