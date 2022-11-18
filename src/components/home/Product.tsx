@@ -15,6 +15,7 @@ export interface ProductProp {
   price: number;
   rating: number;
   sale?: JSX.Element;
+  new?: boolean;
 }
 const Product = (props: ProductProp) => {
   const navigation = useNavigation();
@@ -22,7 +23,12 @@ const Product = (props: ProductProp) => {
   return (
     <Pressable
       style={[styles.item]}
-      onPress={() => navigation.navigate('Detail' as never)}>
+      onPress={() =>
+        navigation.navigate(
+          'Detail' as never,
+          // {id: props.id, name: props.name}
+        )
+      }>
       <Image
         source={{
           uri: `${props.image}`,

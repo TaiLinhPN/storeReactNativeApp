@@ -1,5 +1,6 @@
 import {faSquarePlus} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
 import {ImageBackground, Pressable, Text, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -9,14 +10,27 @@ import Rating from '../components/Detail/Rating';
 import styles from '../components/Detail/style';
 import globalStyles from '../theme/globalStyles';
 
+type ParamList = {
+  Detail: {
+    id: number,
+    name: string
+  };
+};
+
 const onPressAddToCar = () => {
   console.log('go to cart');
 };
+
+
 const DetailScreen = () => {
+  const route = useRoute<RouteProp<ParamList, 'Detail'>>();
+  const  detailPageLoad = route.params
+   
+
   return (
     <ScrollView>
       <View style={globalStyles.app}>
-        <Text style={styles.productName}>Product name</Text>
+        <Text style={styles.productName}>{detailPageLoad.name}</Text>
         <Text style={styles.productSub}>Product subtitle</Text>
         <ImageBackground
           source={{
